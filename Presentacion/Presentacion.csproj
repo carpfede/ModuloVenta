@@ -64,6 +64,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Vistas\IniciarSesionView.xaml.cs">
+      <DependentUpon>IniciarSesionView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -96,7 +99,12 @@
     <Folder Include="ControlesDeUsuario\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Presentadores\" />
-    <Folder Include="Vistas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Vistas\IniciarSesionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
