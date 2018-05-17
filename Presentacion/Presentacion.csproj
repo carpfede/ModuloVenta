@@ -34,8 +34,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
+    <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.4.0.1044, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.4.0.1044\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
@@ -64,6 +64,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Interfaces\IIniciarSesion.cs" />
+    <Compile Include="Presentadores\IniciarSesionPresentador.cs" />
     <Compile Include="Vistas\IniciarSesionView.xaml.cs">
       <DependentUpon>IniciarSesionView.xaml</DependentUpon>
     </Compile>
@@ -97,14 +99,22 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ControlesDeUsuario\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Presentadores\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Vistas\IniciarSesionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aplicacion\Aplicacion.csproj">
+      <Project>{CBC46ABA-5255-45AD-9E3C-D9F1D281767D}</Project>
+      <Name>Aplicacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Transversal\Transversal.csproj">
+      <Project>{3C71E6DB-C61C-494C-9050-92CA194408F8}</Project>
+      <Name>Transversal</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

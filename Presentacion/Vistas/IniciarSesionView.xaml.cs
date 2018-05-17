@@ -1,27 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Presentacion.Interfaces;
+using Presentacion.Presentadores;
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Transversal;
 
 namespace Presentacion.Vistas
 {
     /// <summary>
     /// Lógica de interacción para IniciarSesionView.xaml
     /// </summary>
-    public partial class IniciarSesionView : Window
+    public partial class IniciarSesionView : Window, IIniciarSesion
     {
+        private IniciarSesionPresentador _presentador;
         public IniciarSesionView()
         {
             InitializeComponent();
+            _presentador = new IniciarSesionPresentador(this);
+        }
+
+        public void AccesoPermitido(Sesion sesion)
+        {
+            throw new NotImplementedException();
         }
     }
 }
