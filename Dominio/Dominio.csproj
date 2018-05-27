@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\IniciarCompraDto.cs" />
+    <Compile Include="Dto\IniciarVentaDto.cs" />
     <Compile Include="Entidades\Color.cs" />
     <Compile Include="Entidades\Compra.cs" />
     <Compile Include="Entidades\DetalleCompra.cs" />
@@ -49,15 +51,16 @@
     <Compile Include="Entidades\Marca.cs" />
     <Compile Include="Entidades\Mercaderia.cs" />
     <Compile Include="Entidades\Proveedor.cs" />
+    <Compile Include="Entidades\ProveedorMarca.cs" />
     <Compile Include="Entidades\RepresentanteProveedor.cs" />
     <Compile Include="Entidades\Rol.cs" />
+    <Compile Include="Entidades\Sucursal.cs" />
     <Compile Include="Entidades\Talle.cs" />
     <Compile Include="Entidades\Venta.cs" />
+    <Compile Include="Enums\EProvincia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\IRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
