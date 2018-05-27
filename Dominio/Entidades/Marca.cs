@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Dominio.Enums;
 
 namespace Dominio.Entidades
 {
     public class Marca
     {
+        public int MarcaId { get; set; }
+        public string Nombre { get; set; }
+        public EProvincia Provincia { get; set; }
     }
 }

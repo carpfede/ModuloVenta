@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dominio.Entidades
+﻿namespace Dominio.Entidades
 {
     public class Talle
     {
+        public int TalleId { get; set; }
+        public double NumeroUSA { get; set; }
+        public double NumeroBra { get; set; }
+        public double NumeroEur { get; set; }
     }
 }
