@@ -1,9 +1,8 @@
 ﻿<Application x:Class="Presentacion.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Presentacion"
              StartupUri="Vistas\IniciarSesionView.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>

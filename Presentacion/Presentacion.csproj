@@ -65,7 +65,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Interfaces\IIniciarSesion.cs" />
+    <Compile Include="Interfaces\IMenuPrincipal.cs" />
     <Compile Include="Presentadores\IniciarSesionPresentador.cs" />
+    <Compile Include="Presentadores\MenuPrincipalPresentador.cs" />
     <Compile Include="Vistas\IniciarSesionView.xaml.cs">
       <DependentUpon>IniciarSesionView.xaml</DependentUpon>
     </Compile>
