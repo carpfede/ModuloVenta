@@ -2,7 +2,7 @@
 
 namespace Aplicacion.CasosDeUso.Clases
 {
-    public class IniciarSesion : IIniciarSesion
+    public class InicioSesion : IInicioSesion
     {
     }
 }
