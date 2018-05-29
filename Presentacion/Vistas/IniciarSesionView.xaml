@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="IniciarSesionView" Height="450" Width="800">
     <Grid>
-        
+        <Label>
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ValidName}" Value="False">
+                            <Setter Property="Content" Value="Se creo wacho"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
     </Grid>
 </Window>

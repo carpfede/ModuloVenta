@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="Interfaces\IIniciarSesion.cs" />
     <Compile Include="Interfaces\IMenuPrincipal.cs" />
+    <Compile Include="IoC\IoCUnityContainer.cs" />
     <Compile Include="Presentadores\IniciarSesionPresentador.cs" />
     <Compile Include="Presentadores\MenuPrincipalPresentador.cs" />
     <Compile Include="Vistas\IniciarSesionView.xaml.cs">
@@ -125,7 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ControlesDeUsuario\" />
-    <Folder Include="IoC\" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Vistas\IniciarSesionView.xaml">
@@ -137,6 +137,14 @@
     <ProjectReference Include="..\Aplicacion\Aplicacion.csproj">
       <Project>{CBC46ABA-5255-45AD-9E3C-D9F1D281767D}</Project>
       <Name>Aplicacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{9E54ED7A-CF0C-4690-A564-DD964DDD7AFD}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{5BBD6E7C-1F44-4937-9656-58D778FCDAD5}</Project>
+      <Name>Dominio</Name>
     </ProjectReference>
     <ProjectReference Include="..\Transversal\Transversal.csproj">
       <Project>{3C71E6DB-C61C-494C-9050-92CA194408F8}</Project>

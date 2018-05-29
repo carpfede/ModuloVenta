@@ -74,12 +74,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IoC\IContainer.cs" />
+    <Compile Include="IoC\IoCFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sesion.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="IoC\" />
     <Folder Include="Validaciones\" />
   </ItemGroup>
   <ItemGroup>

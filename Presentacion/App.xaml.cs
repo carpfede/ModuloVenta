@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using Presentacion.IoC;
+using System.Windows;
+using Transversal.IoC;
 
 namespace Presentacion
 {
@@ -10,17 +12,14 @@ namespace Presentacion
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            IoCFactory.Instance.SetContainer(new IoCUnityContainer());
             ComposeObjects();
             Current.MainWindow.Show();
         }
 
         private static void ComposeObjects()
         {
-
-            Current.MainWindow = new Vistas.IniciarSesionView
-            {
-                Title = "Iniciar Sesion"
-            };
+            Current.MainWindow = IoCFactory.Instance.CurrentContainer.Resolve<Vistas.IniciarSesionView>();
         }
     }
 }

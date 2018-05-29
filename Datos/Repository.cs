@@ -5,12 +5,12 @@ using System.Linq.Expressions;
 
 namespace Datos
 {
-    public class Repositorio<T> : IRepository<T>, IDisposable
+    public class Repository<T> : IRepository<T>, IDisposable
         where T : class
     {
         private readonly Context _context;
 
-        public Repositorio(Context context)
+        public Repository(Context context)
         {
             _context = context;
         }
@@ -20,17 +20,12 @@ namespace Datos
             throw new NotImplementedException();
         }
 
-        public void Attach<T1>(T1 item)
+        public void Attach(T item)
         {
             throw new NotImplementedException();
         }
 
-        public void Attach<T1>(IEnumerable<T1> items)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Dispose()
+        public void Attach(IEnumerable<T> items)
         {
             throw new NotImplementedException();
         }
@@ -59,5 +54,11 @@ namespace Datos
         {
             throw new NotImplementedException();
         }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

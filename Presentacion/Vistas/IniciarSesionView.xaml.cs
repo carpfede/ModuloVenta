@@ -3,6 +3,7 @@ using Presentacion.Presentadores;
 using System;
 using System.Windows;
 using Transversal;
+using Unity.Attributes;
 
 namespace Presentacion.Vistas
 {
@@ -11,16 +12,27 @@ namespace Presentacion.Vistas
     /// </summary>
     public partial class IniciarSesionView : Window, IIniciarSesion
     {
-        private IniciarSesionPresentador _presentador;
+        [Dependency]
+        protected IniciarSesionPresentador _presentador { get; set; }
+        
+
         public IniciarSesionView()
         {
             InitializeComponent();
-            _presentador = new IniciarSesionPresentador(this);
+            //_presentador = presentador;
         }
 
         public void AccesoPermitido(Sesion sesion)
         {
             throw new NotImplementedException();
+        }
+
+        public bool ValidName
+        {
+            get
+            {
+                return _presentador == null ? false : true;
+            }
         }
     }
 }

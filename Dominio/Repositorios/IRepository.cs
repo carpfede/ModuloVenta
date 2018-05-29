@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace Dominio.Repositorios
 {
-    public interface IRepository<TEntity>
+    public interface IRepository<TEntity> : IDisposable
         where TEntity : class
     {
         void Add(TEntity item);
@@ -13,7 +13,7 @@ namespace Dominio.Repositorios
         TEntity GetById(int id);
         IEnumerable<TEntity> GetFiltered(Expression<Func<TEntity, bool>> filter);
         IEnumerable<TEntity> GetAll(params Expression<Func<TEntity, object>>[] includes);
-        void Attach<T>(T item);
-        void Attach<T>(IEnumerable<T> items);
+        void Attach(TEntity item);
+        void Attach(IEnumerable<TEntity> items);
     }
 }
