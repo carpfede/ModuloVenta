@@ -2,11 +2,11 @@
 
 namespace Presentacion.Presentadores
 {
-    public class IniciarSesionPresentador
+    public class IniciarSesionPresentador : IPresenter<IIniciarSesion>
     {
-        private readonly IIniciarSesion _view;
+        private IIniciarSesion _view;
 
-        public IniciarSesionPresentador(IIniciarSesion view)
+        public void SetView(IIniciarSesion view)
         {
             _view = view;
         }

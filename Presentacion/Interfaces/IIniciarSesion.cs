@@ -2,7 +2,7 @@
 
 namespace Presentacion.Interfaces
 {
-    public interface IIniciarSesion
+    public interface IIniciarSesion : IView
     {
         void AccesoPermitido(Sesion sesion);
     }

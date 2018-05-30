@@ -12,27 +12,18 @@ namespace Presentacion.Vistas
     /// </summary>
     public partial class IniciarSesionView : Window, IIniciarSesion
     {
-        [Dependency]
-        protected IniciarSesionPresentador _presentador { get; set; }
-        
+        private IniciarSesionPresentador _presentador;
 
-        public IniciarSesionView()
+        public IniciarSesionView(IniciarSesionPresentador presentador)
         {
+            _presentador = presentador;
+            _presentador.SetView(this);
             InitializeComponent();
-            //_presentador = presentador;
         }
 
         public void AccesoPermitido(Sesion sesion)
         {
             throw new NotImplementedException();
-        }
-
-        public bool ValidName
-        {
-            get
-            {
-                return _presentador == null ? false : true;
-            }
         }
     }
 }

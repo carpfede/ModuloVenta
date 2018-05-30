@@ -24,7 +24,7 @@ namespace Presentacion.IoC
         private void ConfigureContainer()
         {
             _container = new UnityContainer();
-            _container.RegisterType<IniciarSesionPresentador>(new SingletonLifetimeManager());
+            _container.RegisterType<IniciarSesionPresentador>();
             _container.RegisterType<IIniciarSesion, IniciarSesionView>();
             _container.RegisterType(typeof(IRepository<>), typeof(Repository<>), new ContainerControlledLifetimeManager());
         }
