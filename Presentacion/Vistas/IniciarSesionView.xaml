@@ -4,6 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:domain1="doma"
         mc:Ignorable="d"
         Title="Iniciar Sesion" 
         Width="700" Height="350" 
@@ -11,9 +12,69 @@
         Background="Transparent" AllowsTransparency="True">
     <Grid>
         <Border  Background="#6e226a" VerticalAlignment="Top" Height="50" CornerRadius="20 20 0 0">
+            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                <TextBlock  FontSize="40" Foreground="#C3C3C3" HorizontalAlignment="Center">Leontina calzados y mas...</TextBlock>
+            </StackPanel>
         </Border>
 
-        <Border Background="Beige" VerticalAlignment="Bottom" Height="300" CornerRadius="0 0 20 20">
+        <Border Background="White" VerticalAlignment="Bottom" Height="300" CornerRadius="0 0 20 20" HorizontalAlignment="Left" Width="700">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="150"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                </Grid.RowDefinitions>
+                <StackPanel VerticalAlignment="Center" Orientation="Vertical" Grid.RowSpan="4" Grid.Row="0" Grid.Column="0" Height="270" Margin="0,0,0,30">
+                    <Image Source="D:\Repos\ModuloVenta\Presentacion\Iconos\Logo.png" Height="268"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" Orientation="Vertical" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="0">
+                    <TextBlock FontSize="40" Style="{StaticResource MaterialDesignHeadlineTextBlock}" HorizontalAlignment="Center" Margin="25">Bienvenido!</TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Grid.Column="0" Kind="Account" Foreground="{Binding ElementName=NameTextBox, Path=BorderBrush}" VerticalAlignment="Center" Margin="0 0 5 0"/>
+                        <TextBox FontSize="20" Grid.Column="1" x:Name="NameTextBox" materialDesign:HintAssist.Hint="Usuario" Margin="0 0 10 0">
+                            <TextBox.Text>
+                                <Binding Path="Usuario" UpdateSourceTrigger="PropertyChanged">
+                                </Binding>
+                            </TextBox.Text>
+                        </TextBox>
+                    </Grid>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Center" Orientation="Vertical" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Grid.Column="0" Kind="Key" Foreground="{Binding ElementName=PasswordBox, Path=BorderBrush}" VerticalAlignment="Center" Margin="0 0 5 0" />
+                        <PasswordBox FontSize="20" Grid.Column="1" x:Name="PasswordBox" materialDesign:HintAssist.Hint="Contraseña" Margin="0 0 10 0"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Vertical" Grid.Column="1" Grid.Row="3">
+                    <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" FontSize="15">
+                        Ingresar
+                    </Button>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Top" Orientation="Vertical" Grid.Column="2" Grid.Row="3">
+                    <Grid>
+                        <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" FontSize="15">
+                            Salir
+                        </Button>
+                    </Grid>
+                </StackPanel>
+
+            </Grid>
         </Border>
     </Grid>
 </Window>
