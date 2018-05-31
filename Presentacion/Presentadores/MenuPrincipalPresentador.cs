@@ -2,11 +2,11 @@
 
 namespace Presentacion.Presentadores
 {
-    public class MenuPrincipalPresentador
+    public class MenuPrincipalPresentador : IPresenter<IMenuPrincipal>
     {
-        private readonly IMenuPrincipal _view;
+        private IMenuPrincipal _view;
 
-        public MenuPrincipalPresentador(IMenuPrincipal view)
+        public void SetView(IMenuPrincipal view)
         {
             _view = view;
         }

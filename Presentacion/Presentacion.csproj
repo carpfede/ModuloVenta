@@ -92,12 +92,14 @@
     <Compile Include="Interfaces\IMenuPrincipal.cs" />
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="IoC\IoCUnityContainer.cs" />
-    <Compile Include="Presentadores\AbstractPresenter.cs" />
     <Compile Include="Presentadores\IniciarSesionPresentador.cs" />
     <Compile Include="Presentadores\IPresenter.cs" />
     <Compile Include="Presentadores\MenuPrincipalPresentador.cs" />
     <Compile Include="Vistas\IniciarSesionView.xaml.cs">
       <DependentUpon>IniciarSesionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\MenuPrincipalView.xaml.cs">
+      <DependentUpon>MenuPrincipalView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +134,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Vistas\IniciarSesionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\MenuPrincipalView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
