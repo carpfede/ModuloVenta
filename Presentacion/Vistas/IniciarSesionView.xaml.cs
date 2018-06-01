@@ -13,8 +13,6 @@ namespace Presentacion.Vistas
 
         public IniciarSesionView(IniciarSesionPresentador presentador)
         {
-            var x = SystemParameters.PrimaryScreenWidth;
-            var y = SystemParameters.PrimaryScreenHeight;
             _presentador = presentador;
             _presentador.SetView(this);
             InitializeComponent();

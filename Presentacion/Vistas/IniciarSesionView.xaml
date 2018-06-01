@@ -30,7 +30,7 @@
                     <RowDefinition Height="75"/>
                 </Grid.RowDefinitions>
                 <StackPanel VerticalAlignment="Center" Orientation="Vertical" Grid.RowSpan="4" Grid.Row="0" Grid.Column="0" Height="270" Margin="0,0,0,30">
-                    <Image Source="D:\Repos\ModuloVenta\Presentacion\Iconos\Logo.png" Height="268"/>
+                    <Image Source="/Iconos/Logo.png" Height="268"/>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Center" Orientation="Vertical" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="0">
                     <TextBlock FontSize="40" Style="{StaticResource MaterialDesignHeadlineTextBlock}" HorizontalAlignment="Center" Margin="25">Bienvenido!</TextBlock>
