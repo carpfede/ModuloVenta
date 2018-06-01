@@ -1,4 +1,6 @@
-﻿using Datos;
+﻿using Aplicacion.CasosDeUso.Clases;
+using Aplicacion.CasosDeUso.Interfaces;
+using Datos;
 using Dominio.Repositorios;
 using Presentacion.Interfaces;
 using Presentacion.Presentadores;
@@ -28,6 +30,7 @@ namespace Presentacion.IoC
             _container.RegisterType<IIniciarSesion, IniciarSesionView>();
             _container.RegisterType<MenuPrincipalPresentador>();
             _container.RegisterType<IMenuPrincipal, MenuPrincipalView>();
+            _container.RegisterType<IInicioSesion, InicioSesion>();
             _container.RegisterType(typeof(IRepository<>), typeof(Repository<>), new ContainerControlledLifetimeManager());
         }
         #endregion
