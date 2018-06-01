@@ -12,7 +12,20 @@
     <Grid>
         <Border  Background="#6e226a" VerticalAlignment="Top" Height="50" CornerRadius="20 20 0 0">
             <StackPanel VerticalAlignment="Center" Orientation="Vertical">
-                <TextBlock  FontSize="40" Foreground="#C3C3C3" HorizontalAlignment="Center">Leontina calzados y mas...</TextBlock>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" FontSize="40" Foreground="#C3C3C3" HorizontalAlignment="Center">Leontina calzados y mas...</TextBlock>
+                    <Label Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="BtnMinimize">
+                        <materialDesign:PackIcon  Kind="WindowMinimize"/>
+                    </Label>
+                    <Label Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="BtnClose">
+                        <materialDesign:PackIcon Kind="WindowClose" />
+                    </Label>
+                </Grid>
             </StackPanel>
         </Border>
 
@@ -24,16 +37,16 @@
                     <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
-                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="105"/>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="65"/>
+                    <RowDefinition Height="65"/>
                 </Grid.RowDefinitions>
-                <StackPanel VerticalAlignment="Center" Orientation="Vertical" Grid.RowSpan="4" Grid.Row="0" Grid.Column="0" Height="270" Margin="0,0,0,30">
+                <StackPanel VerticalAlignment="Center" Orientation="Vertical" Grid.RowSpan="4" Grid.Row="0" Grid.Column="0">
                     <Image Source="/Iconos/Logo.png" Height="268"/>
                 </StackPanel>
-                <StackPanel VerticalAlignment="Center" Orientation="Vertical" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="0">
-                    <TextBlock FontSize="40" Style="{StaticResource MaterialDesignHeadlineTextBlock}" HorizontalAlignment="Center" Margin="25">Bienvenido!</TextBlock>
+                <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="0">
+                    <TextBlock Style="{StaticResource MaterialDesignDisplay2TextBlock}" HorizontalAlignment="Center">Bienvenido!</TextBlock>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1">
                     <Grid>
@@ -42,11 +55,7 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <materialDesign:PackIcon Grid.Column="0" Kind="Account" Foreground="{Binding ElementName=NameTextBox, Path=BorderBrush}" VerticalAlignment="Center" Margin="0 0 5 0"/>
-                        <TextBox FontSize="20" Grid.Column="1" x:Name="NameTextBox" materialDesign:HintAssist.Hint="Usuario" Margin="0 0 10 0">
-                            <TextBox.Text>
-                                <Binding Path="Usuario" UpdateSourceTrigger="PropertyChanged">
-                                </Binding>
-                            </TextBox.Text>
+                        <TextBox FontSize="20" Grid.Column="1" materialDesign:HintAssist.Hint="Usuario" Margin="0 0 10 0" Name="txtUsuario">
                         </TextBox>
                     </Grid>
                 </StackPanel>
@@ -56,18 +65,18 @@
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <materialDesign:PackIcon Grid.Column="0" Kind="Key" Foreground="{Binding ElementName=PasswordBox, Path=BorderBrush}" VerticalAlignment="Center" Margin="0 0 5 0" />
-                        <PasswordBox FontSize="20" Grid.Column="1" x:Name="PasswordBox" materialDesign:HintAssist.Hint="Contraseña" Margin="0 0 10 0"/>
+                        <materialDesign:PackIcon Grid.Column="0" Kind="Key" Foreground="{Binding ElementName=txtPass, Path=BorderBrush}" VerticalAlignment="Center" Margin="0 0 5 0" />
+                        <PasswordBox FontSize="20" Grid.Column="1" Name="txtPass" materialDesign:HintAssist.Hint="Contraseña" Margin="0 0 10 0"/>
                     </Grid>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Top" Orientation="Vertical" Grid.Column="1" Grid.Row="3">
-                    <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" FontSize="15">
+                    <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" FontSize="15" Click="BtnIngresar">
                         Ingresar
                     </Button>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Top" Orientation="Vertical" Grid.Column="2" Grid.Row="3">
                     <Grid>
-                        <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" FontSize="15">
+                        <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" FontSize="15" Click="BtnClose">
                             Salir
                         </Button>
                     </Grid>
