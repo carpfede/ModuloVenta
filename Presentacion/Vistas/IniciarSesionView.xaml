@@ -10,7 +10,7 @@
         WindowStyle="None" WindowStartupLocation="CenterScreen"
         Background="Transparent" AllowsTransparency="True">
     <Grid>
-        <Border  Background="#6e226a" VerticalAlignment="Top" Height="50" CornerRadius="20 20 0 0">
+        <Border  Background="{StaticResource ColorLeontina}" VerticalAlignment="Top" Height="50" CornerRadius="20 20 0 0">
             <StackPanel VerticalAlignment="Center" Orientation="Vertical">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -18,7 +18,7 @@
                         <ColumnDefinition Width="40"/>
                         <ColumnDefinition Width="50"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" FontSize="40" Foreground="#C3C3C3" HorizontalAlignment="Center">Leontina calzados y mas...</TextBlock>
+                    <TextBlock Grid.Column="0" FontSize="40" Foreground="#C3C3C3" HorizontalAlignment="Center" Text="{StaticResource Title}"></TextBlock>
                     <Label Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand" MouseLeftButtonDown="BtnMinimize">
                         <materialDesign:PackIcon  Kind="WindowMinimize"/>
                     </Label>
@@ -46,7 +46,7 @@
                     <Image Source="/Iconos/Logo.png" Height="268"/>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="0">
-                    <TextBlock Style="{StaticResource MaterialDesignDisplay2TextBlock}" HorizontalAlignment="Center">Bienvenido!</TextBlock>
+                    <TextBlock Style="{StaticResource MaterialDesignDisplay2TextBlock}" HorizontalAlignment="Center" Foreground="#6e226a">Bienvenido!</TextBlock>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Bottom" Orientation="Vertical" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1">
                     <Grid>
@@ -70,14 +70,30 @@
                     </Grid>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Top" Orientation="Vertical" Grid.Column="1" Grid.Row="3">
-                    <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" FontSize="15" Click="BtnIngresar">
-                        Ingresar
+                    <Button Width="100" FontSize="15" Click="BtnIngresar">
+                        <Button.Background>
+                            <StaticResource ResourceKey="ColorLeontina"/>
+                        </Button.Background>
+                        <Button.Style>
+                            <StaticResource ResourceKey="MaterialDesignRaisedButton"/>
+                        </Button.Style>
+                        <Button.Content>
+                            <TextBlock>Ingresar</TextBlock>
+                        </Button.Content>
                     </Button>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Top" Orientation="Vertical" Grid.Column="2" Grid.Row="3">
                     <Grid>
-                        <Button Style="{StaticResource MaterialDesignRaisedButton}" Width="100" FontSize="15" Click="BtnClose">
-                            Salir
+                        <Button Width="100" FontSize="15" Click="BtnClose">
+                            <Button.Background>
+                                <StaticResource ResourceKey="ColorLeontina"/>
+                            </Button.Background>
+                            <Button.Style>
+                                <StaticResource ResourceKey="MaterialDesignRaisedButton"/>
+                            </Button.Style>
+                            <Button.Content>
+                                <TextBlock>Salir</TextBlock>
+                            </Button.Content>
                         </Button>
                     </Grid>
                 </StackPanel>
