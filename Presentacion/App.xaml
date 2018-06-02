@@ -1,6 +1,7 @@
 ﻿<Application x:Class="Presentacion.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:system="clr-namespace:System;assembly=mscorlib">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -9,7 +10,8 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <Color x:Key="ColorLeontina">#6e226a</Color>
+            <SolidColorBrush x:Key="ColorLeontina">#6e226a</SolidColorBrush>
+            <system:String x:Key="Title">Leontina calzados y mas...</system:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
