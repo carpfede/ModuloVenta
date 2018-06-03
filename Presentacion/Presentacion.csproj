@@ -54,6 +54,12 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="ToastNotifications, Version=2.2.5.0, Culture=neutral, PublicKeyToken=e89d9d7314a7c797, processorArchitecture=MSIL">
+      <HintPath>..\packages\ToastNotifications.2.2.5\lib\net40\ToastNotifications.dll</HintPath>
+    </Reference>
+    <Reference Include="ToastNotifications.Messages, Version=2.2.5.0, Culture=neutral, PublicKeyToken=e89d9d7314a7c797, processorArchitecture=MSIL">
+      <HintPath>..\packages\ToastNotifications.Messages.2.2.5\lib\net40\ToastNotifications.Messages.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Abstractions, Version=3.3.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.8.6\lib\net46\Unity.Abstractions.dll</HintPath>
     </Reference>
@@ -92,6 +98,12 @@
     <Compile Include="Interfaces\IMenuPrincipal.cs" />
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="IoC\IoCUnityContainer.cs" />
+    <Compile Include="Notificaciones\CustomMessage.xaml.cs">
+      <DependentUpon>CustomMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Notificaciones\CustomNotification.cs" />
+    <Compile Include="Notificaciones\NotificationService.cs" />
+    <Compile Include="Notificaciones\ToastToColorResourceConverter.cs" />
     <Compile Include="Presentadores\IniciarSesionPresentador.cs" />
     <Compile Include="Presentadores\IPresenter.cs" />
     <Compile Include="Presentadores\MenuPrincipalPresentador.cs" />
@@ -133,6 +145,10 @@
     <Folder Include="ControlesDeUsuario\" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Notificaciones\CustomMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vistas\IniciarSesionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
