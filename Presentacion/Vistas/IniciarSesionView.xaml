@@ -10,7 +10,7 @@
         WindowStyle="None" WindowStartupLocation="CenterScreen"
         Background="Transparent" AllowsTransparency="True">
     <Grid>
-        <Border  Background="{StaticResource ColorLeontina}" VerticalAlignment="Top" Height="50" CornerRadius="20 20 0 0">
+        <Border  Background="{StaticResource ColorLeontina}" VerticalAlignment="Top" Height="50" CornerRadius="10 10 0 0">
             <StackPanel VerticalAlignment="Center" Orientation="Vertical">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -29,7 +29,7 @@
             </StackPanel>
         </Border>
 
-        <Border Background="White" VerticalAlignment="Bottom" Height="300" CornerRadius="0 0 20 20" HorizontalAlignment="Left" Width="700">
+        <Border Background="White" VerticalAlignment="Bottom" Height="300" CornerRadius="0 0 10 10" HorizontalAlignment="Left" Width="700">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
