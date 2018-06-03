@@ -1,6 +1,7 @@
 ﻿using System;
 using Presentacion.Interfaces;
 using Aplicacion.CasosDeUso.Interfaces;
+using Aplicacion.Servicios;
 
 namespace Presentacion.Presentadores
 {
@@ -8,9 +9,11 @@ namespace Presentacion.Presentadores
     {
         private IIniciarSesion _view;
         private IInicioSesion _inicioSesion;
+        private INotificationService _notification;
 
-        public IniciarSesionPresentador(IInicioSesion inicioSesion)
+        public IniciarSesionPresentador(IInicioSesion inicioSesion, INotificationService notificationService)
         {
+            _notification = notificationService;
             _inicioSesion = inicioSesion;
         }
 
