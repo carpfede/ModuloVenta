@@ -5,9 +5,33 @@ namespace Datos
 {
     public class Context : DbContext
     {
-        public Context() : base("name=LeontinaCalzados")
+        public Context() : base("LeontinaCalzados")
         {
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Usuario>()
+                .HasMany(u => u.Roles)
+                .WithMany(r => r.Usuarios)
+                .Map(ur =>
+                {
+                    ur.MapLeftKey("UsuarioId");
+                    ur.MapRightKey("RolId");
+                    ur.ToTable("UsuarioRol");
+                });
+
+            modelBuilder.Entity<Proveedor>()
+                .HasMany(p => p.Marcas)
+                .WithMany(m => m.Proveedores)
+                .Map(pm =>
+                {
+                    pm.MapLeftKey("ProovedorId");
+                    pm.MapRightKey("MarcaId");
+                    pm.ToTable("ProovedorMarca");
+                });
+            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Color> Colores { get; set; }

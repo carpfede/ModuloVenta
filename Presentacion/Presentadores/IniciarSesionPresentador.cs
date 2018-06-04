@@ -1,6 +1,9 @@
 ﻿using Aplicacion.CasosDeUso.Interfaces;
 using Aplicacion.Servicios;
 using Presentacion.Interfaces;
+using Presentacion.Seguridad;
+using System;
+using System.Threading;
 
 namespace Presentacion.Presentadores
 {
@@ -23,7 +26,14 @@ namespace Presentacion.Presentadores
 
         public void IngresarAlSistema()
         {
-            _inicioSesion.AutenticarUsuario(_view.Usuario, _view.Contraseña);
+            var user = _inicioSesion.AutenticarUsuario(_view.Usuario, _view.Contraseña);
+
+            IdentificacionUsuario customPrincipal = Thread.CurrentPrincipal as IdentificacionUsuario;
+            if (customPrincipal == null)
+                throw new ArgumentException("The application's default thread principal must be set to a CustomPrincipal object on startup.");
+
+            //Authenticate the user
+            customPrincipal.Identity = new UsuarioPersonalizado(user.Username, user.Email, user.Roles);
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿namespace Aplicacion.CasosDeUso.Interfaces
+﻿using Dominio.Entidades;
+
+namespace Aplicacion.CasosDeUso.Interfaces
 {
     public interface IInicioSesion
     {
-        void AutenticarUsuario(string usuario,string contraseña);
+        Usuario AutenticarUsuario(string usuario,string contraseña);
     }
 }

@@ -107,6 +107,8 @@
     <Compile Include="Presentadores\IniciarSesionPresentador.cs" />
     <Compile Include="Presentadores\IPresenter.cs" />
     <Compile Include="Presentadores\MenuPrincipalPresentador.cs" />
+    <Compile Include="Seguridad\IdentificacionUsuario.cs" />
+    <Compile Include="Seguridad\UsuarioPersonalizado.cs" />
     <Compile Include="Vistas\IniciarSesionView.xaml.cs">
       <DependentUpon>IniciarSesionView.xaml</DependentUpon>
     </Compile>

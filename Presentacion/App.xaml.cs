@@ -1,4 +1,6 @@
 ﻿using Presentacion.IoC;
+using Presentacion.Seguridad;
+using System;
 using System.Windows;
 using Transversal.IoC;
 
@@ -13,6 +15,7 @@ namespace Presentacion
         {
             base.OnStartup(e);
             IoCFactory.Instance.SetContainer(new IoCUnityContainer());
+            AppDomain.CurrentDomain.SetThreadPrincipal(new IdentificacionUsuario());
             ComposeObjects();
             Current.MainWindow.Show();
         }

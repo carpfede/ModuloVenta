@@ -58,6 +58,7 @@
     <Compile Include="Entidades\Rol.cs" />
     <Compile Include="Entidades\Sucursal.cs" />
     <Compile Include="Entidades\Talle.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Entidades\Venta.cs" />
     <Compile Include="Enums\EProvincia.cs" />
     <Compile Include="Enums\EToastColor.cs" />
