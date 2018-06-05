@@ -6,6 +6,6 @@ namespace Presentacion.Interfaces
     {
         string Usuario { get; }
         string Contraseña { get; }
-        void AccesoPermitido(Sesion sesion);
+        void AccesoPermitido();
     }
 }

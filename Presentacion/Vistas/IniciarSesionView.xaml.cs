@@ -26,7 +26,7 @@ namespace Presentacion.Vistas
         #region IIniciarSesion Methods 
         public string Usuario => txtUsuario.Text;
         public string Contraseña => txtPass.Password;
-        public void AccesoPermitido(Sesion sesion)
+        public void AccesoPermitido()
         {
             throw new NotImplementedException();
         }

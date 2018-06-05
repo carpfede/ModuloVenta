@@ -12,7 +12,7 @@ namespace Dominio.Repositorios
         void Modify(TEntity item);
         TEntity GetById(int id);
         IEnumerable<TEntity> GetFiltered(Expression<Func<TEntity, bool>> filter);
-        IEnumerable<TEntity> GetAll(params Expression<Func<TEntity, object>>[] includes);
+        IEnumerable<TEntity> GetAll();
         void Attach(TEntity item);
         void Attach(IEnumerable<TEntity> items);
     }

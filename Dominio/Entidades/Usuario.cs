@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Principal;
 
 namespace Dominio.Entidades
 {
     public class Usuario
     {
-        public int UsuarioId { get; set; }
+        public string UsuarioId { get; set; }
         public string UserName { get; set; }
         public string PasswordHash { get; set; }
         public DateTime CreatedDate { get; set; }

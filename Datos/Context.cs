@@ -5,7 +5,7 @@ namespace Datos
 {
     public class Context : DbContext
     {
-        public Context() : base("LeontinaCalzados")
+        public Context() : base("BDLeontinaCalzados")
         {
 
         }

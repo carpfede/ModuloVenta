@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dominio.Entidades
 {
     public class Empleado
     {
+        [ForeignKey("Usuario")]
         public int EmpleadoId { get; set; }
         public string Apellido { get; set; }
         public string Nombre { get; set; }

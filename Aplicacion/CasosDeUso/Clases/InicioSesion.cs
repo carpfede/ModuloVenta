@@ -20,7 +20,7 @@ namespace Aplicacion.CasosDeUso.Clases
         public Usuario AutenticarUsuario(string usuario, string contraseña)
         {
             var user = _repositorioUsuarios.GetFiltered(u => 
-            u.PasswordHash.Equals(CalculateHash(contraseña,usuario)) && u.Name.Equals(usuario)).FirstOrDefault();
+            u.PasswordHash.Equals(CalculateHash(contraseña,usuario)) && u.UserName.Equals(usuario)).FirstOrDefault();
             return user;
         }
 

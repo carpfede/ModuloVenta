@@ -1,6 +1,7 @@
 ﻿using Dominio.Repositorios;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace Datos
@@ -30,7 +31,7 @@ namespace Datos
             throw new NotImplementedException();
         }
 
-        public IEnumerable<T> GetAll(params Expression<Func<T, object>>[] includes)
+        public IEnumerable<T> GetAll()
         {
             throw new NotImplementedException();
         }
@@ -42,7 +43,7 @@ namespace Datos
 
         public IEnumerable<T> GetFiltered(Expression<Func<T, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _context.Set<T>().Where(filter);
         }
 
         public void Modify(T item)
