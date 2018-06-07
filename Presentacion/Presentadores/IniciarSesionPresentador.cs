@@ -39,6 +39,7 @@ namespace Presentacion.Presentadores
             var roles = user.Roles.Select(u => u.Nombre);
             //Authenticate the user
             customPrincipal.Identity = new UsuarioPersonalizado(user.UserName, roles.ToArray());
+            _view.AccesoPermitido();
         }
     }
 }

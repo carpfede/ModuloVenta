@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
     xmlns:core="clr-namespace:ToastNotifications.Core;assembly=ToastNotifications"
     mc:Ignorable="d"  
     Background="Transparent"
@@ -27,6 +28,9 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <TextBlock Text="{Binding Title}">
+                    <Grid.Row>
+                        <System:Int32>0</System:Int32>
+                    </Grid.Row>
                     <TextBlock.Foreground>
                         <SolidColorBrush>
                             <SolidColorBrush.Color>
@@ -35,23 +39,19 @@
                         </SolidColorBrush>
                     </TextBlock.Foreground>
                     <TextBlock.HorizontalAlignment>
-                        Center
+                        <HorizontalAlignment>Center</HorizontalAlignment>
                     </TextBlock.HorizontalAlignment>
                 </TextBlock>
-                <TextBlock Text="{Binding Message}" Grid.Row="1">
-                    <TextBlock.Foreground>
-                        <SolidColorBrush>
-                            <SolidColorBrush.Color>
-                                <Color>White</Color>
-                            </SolidColorBrush.Color>
-                        </SolidColorBrush>
-                    </TextBlock.Foreground>
-                    <TextBlock.TextWrapping>
-                        Wrap
-                    </TextBlock.TextWrapping>
+                <TextBlock Text="{Binding Message}" Style="{StaticResource MaterialDesignBody2TextBlock}" Foreground="White">
                     <TextBlock.Margin>
-                        5 0 0 0
+                        10 , 0 , 10 , 5
                     </TextBlock.Margin>
+                    <Grid.Row>
+                        <System:Int32>1</System:Int32>
+                    </Grid.Row>
+                    <TextBlock.TextWrapping>
+                        <TextWrapping>Wrap</TextWrapping>
+                    </TextBlock.TextWrapping>
                 </TextBlock>
             </Grid>
         </Grid>

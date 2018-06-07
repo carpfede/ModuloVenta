@@ -18,7 +18,7 @@ namespace Presentacion.Vistas
 
         public void CargarFuncionalidad(UserControl control)
         {
-            throw new System.NotImplementedException();
+            //Funcionalidades.RowDefinitions.Add();
         }
 
         public void CerrarSesion()

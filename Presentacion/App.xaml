@@ -1,8 +1,8 @@
 ﻿<Application x:Class="Presentacion.App"
-             xmlns:local="clr-namespace:Presentacion.Notificaciones"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+             xmlns:local="clr-namespace:Presentacion.Notificaciones"
              xmlns:system="clr-namespace:System;assembly=mscorlib">
     
     <Application.Resources>

@@ -2,7 +2,7 @@
 using Presentacion.Presentadores;
 using System;
 using System.Windows;
-using Transversal;
+using Transversal.IoC;
 
 namespace Presentacion.Vistas
 {
@@ -28,7 +28,9 @@ namespace Presentacion.Vistas
         public string Contraseña => txtPass.Password;
         public void AccesoPermitido()
         {
-            throw new NotImplementedException();
+            Hide();
+            var view = (MenuPrincipalView)IoCFactory.Instance.CurrentContainer.Resolve<IMenuPrincipal>();
+            view.Show();
         }
         #endregion
 
