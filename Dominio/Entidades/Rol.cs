@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dominio.Entidades
 {
+    [Table("Roles")]
     public class Rol
     {
         public int RolId { get; set; }

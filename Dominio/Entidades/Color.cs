@@ -1,5 +1,8 @@
-﻿namespace Dominio.Entidades
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Dominio.Entidades
 {
+    [Table("Colores")]
     public class Color
     {
         public int ColorId { get; set; }

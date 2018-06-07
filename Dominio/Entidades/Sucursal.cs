@@ -1,7 +1,9 @@
 ﻿using Dominio.Enums;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dominio.Entidades
 {
+    [Table("Sucursales")]
     public class Sucursal
     {
         public int SucursalId { get; set; }

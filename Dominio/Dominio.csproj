@@ -54,7 +54,6 @@
     <Compile Include="Entidades\Marca.cs" />
     <Compile Include="Entidades\Mercaderia.cs" />
     <Compile Include="Entidades\Proveedor.cs" />
-    <Compile Include="Entidades\ProveedorMarca.cs" />
     <Compile Include="Entidades\RepresentanteProveedor.cs" />
     <Compile Include="Entidades\Rol.cs" />
     <Compile Include="Entidades\Sucursal.cs" />

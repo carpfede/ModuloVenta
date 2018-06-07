@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dominio.Entidades
 {
+    [Table("Proveedores")]
     public class Proveedor
     {
         public int ProveedorId { get; set; }
