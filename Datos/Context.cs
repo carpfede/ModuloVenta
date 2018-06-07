@@ -12,26 +12,6 @@ namespace Datos
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Usuario>()
-                .HasMany(u => u.Roles)
-                .WithMany(r => r.Usuarios)
-                .Map(ur =>
-                {
-                    ur.MapLeftKey("UsuarioId");
-                    ur.MapRightKey("RolId");
-                    ur.ToTable("UsuarioRol");
-                });
-
-            modelBuilder.Entity<Proveedor>()
-                .HasMany(p => p.Marcas)
-                .WithMany(m => m.Proveedores)
-                .Map(pm =>
-                {
-                    pm.MapLeftKey("ProovedorId");
-                    pm.MapRightKey("MarcaId");
-                    pm.ToTable("ProovedorMarca");
-                });
-            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Color> Colores { get; set; }
@@ -43,7 +23,6 @@ namespace Datos
         public DbSet<Marca> Marcas { get; set; }
         public DbSet<Mercaderia> Mercaderias { get; set; }
         public DbSet<Proveedor> Proveedores { get; set; }
-        public DbSet<ProveedorMarca> ProveedoresMarcas { get; set; }
         public DbSet<RepresentanteProveedor> Representantes { get; set; }
         public DbSet<Rol> Roles { get; set; }
         public DbSet<Talle> Talles { get; set; }
