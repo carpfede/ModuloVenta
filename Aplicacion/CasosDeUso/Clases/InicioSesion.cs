@@ -19,9 +19,10 @@ namespace Aplicacion.CasosDeUso.Clases
 
         public Usuario AutenticarUsuario(string usuario, string contraseña)
         {
-            var user = _repositorioUsuarios.GetFiltered(u => 
-            u.PasswordHash.Equals(CalculateHash(contraseña,usuario)) && u.UserName.Equals(usuario)).FirstOrDefault();
-            return user;
+            string hash = CalculateHash(contraseña, usuario);
+            return _repositorioUsuarios.GetFiltered(u =>
+                    u.PasswordHash.Equals(hash) && u.UserName.Equals(usuario))
+                    .FirstOrDefault();
         }
 
         private string CalculateHash(string clearTextPassword, string salt)
