@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using ToastNotifications.Core;
 
-namespace Presentacion.Notificaciones
+namespace Presentacion.Converters
 {
     public class CustomNotification : NotificationBase, INotifyPropertyChanged
     {

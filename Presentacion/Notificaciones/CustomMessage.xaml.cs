@@ -1,6 +1,6 @@
 ﻿using ToastNotifications.Core;
 
-namespace Presentacion.Notificaciones
+namespace Presentacion.Converters
 {
     /// <summary>
     /// Lógica de interacción para CustomMessage.xaml
@@ -11,11 +11,6 @@ namespace Presentacion.Notificaciones
         {
             DataContext = notification;
             InitializeComponent();
-        }
-
-        public object Converter()
-        {
-            return new object();
         }
     }
 }

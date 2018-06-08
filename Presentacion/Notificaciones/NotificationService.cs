@@ -7,7 +7,7 @@ using ToastNotifications;
 using ToastNotifications.Lifetime;
 using ToastNotifications.Position;
 
-namespace Presentacion.Notificaciones
+namespace Presentacion.Converters
 {
     public class NotificationService : INotificationService
     {
