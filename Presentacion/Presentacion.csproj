@@ -101,6 +101,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\RatioConverter.cs" />
     <Compile Include="Interfaces\IIniciarSesion.cs" />
     <Compile Include="Interfaces\IMenuPrincipal.cs" />
     <Compile Include="Interfaces\IView.cs" />
@@ -110,7 +111,7 @@
     </Compile>
     <Compile Include="Notificaciones\CustomNotification.cs" />
     <Compile Include="Notificaciones\NotificationService.cs" />
-    <Compile Include="Notificaciones\ToastToColorResourceConverter.cs" />
+    <Compile Include="Converters\ToastToColorResourceConverter.cs" />
     <Compile Include="Presentadores\IniciarSesionPresentador.cs" />
     <Compile Include="Presentadores\IPresenter.cs" />
     <Compile Include="Presentadores\MenuPrincipalPresentador.cs" />
