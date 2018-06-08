@@ -25,5 +25,20 @@ namespace Presentacion.Vistas
         {
             throw new System.NotImplementedException();
         }
+
+        private void BtnAyuda_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnMinimizar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
