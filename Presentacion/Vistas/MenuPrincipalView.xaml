@@ -8,6 +8,7 @@
     xmlns:tools="clr-namespace:Presentacion.Converters"
     x:Class="Presentacion.Vistas.MenuPrincipalView"
     mc:Ignorable="d"
+    Title="Menu Principal"
     Height="{Binding Source={x:Static SystemParameters.PrimaryScreenHeight}, Converter={tools:RatioConverter}, ConverterParameter='0.93' }" 
     Width="{Binding Source={x:Static SystemParameters.PrimaryScreenWidth}, Converter={tools:RatioConverter}, ConverterParameter='0.98' }" 
     WindowStyle="None" WindowStartupLocation="CenterScreen"
@@ -26,7 +27,7 @@
             <RowDefinition Height="80"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Border CornerRadius="30 30 0 0">
+        <Border CornerRadius="10 10 0 0">
             <Border.Background>
                 <LinearGradientBrush>
                     <GradientStop Color="{StaticResource ColorMorado}" Offset="0.1"/>
@@ -59,7 +60,7 @@
                 </TextBlock>
             </DockPanel>
         </Border>
-        <Border CornerRadius="0 0 30 30">
+        <Border CornerRadius="0 0 10 10">
             <Border.Background>
                 <SolidColorBrush Color="#C3C3C3"/>
             </Border.Background>

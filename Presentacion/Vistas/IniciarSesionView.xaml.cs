@@ -2,7 +2,7 @@
 using Presentacion.Presentadores;
 using System;
 using System.Windows;
-using Transversal.IoC;
+using System.Windows.Input;
 
 namespace Presentacion.Vistas
 {
@@ -26,11 +26,9 @@ namespace Presentacion.Vistas
         #region IIniciarSesion Methods 
         public string Usuario => txtUsuario.Text;
         public string Contraseña => txtPass.Password;
-        public void AccesoPermitido()
+        public void Dispose()
         {
-            Hide();
-            var view = (MenuPrincipalView)IoCFactory.Instance.CurrentContainer.Resolve<IMenuPrincipal>();
-            view.Show();
+            Close();
         }
         #endregion
 
@@ -42,13 +40,19 @@ namespace Presentacion.Vistas
 
         private void BtnClose(object sender, EventArgs e)
         {
-            Close();
+            Dispose();
         }
 
         private void BtnIngresar(object sender, EventArgs e)
         {
             _presentador.IngresarAlSistema();
         }
+        private void KeyEnter(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                _presentador.IngresarAlSistema();
+        }
         #endregion
+
     }
 }

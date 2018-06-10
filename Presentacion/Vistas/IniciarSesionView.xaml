@@ -72,7 +72,7 @@
                     </Grid>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Top" Orientation="Vertical" Grid.Column="1" Grid.Row="3">
-                    <Button Width="100" FontSize="15" Click="BtnIngresar">
+                    <Button Width="100" FontSize="15" Click="BtnIngresar" KeyDown="KeyEnter">
                         <Button.Background>
                             <StaticResource ResourceKey="ColorLeontina"/>
                         </Button.Background>
