@@ -2,5 +2,7 @@
 {
     public interface IView
     {
+        void Show();
+        void Dispose();
     }
 }
