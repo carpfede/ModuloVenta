@@ -66,6 +66,7 @@
     <Compile Include="CasosDeUso\Interfaces\IProcesarCompra.cs" />
     <Compile Include="CasosDeUso\Interfaces\IRealizarVenta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\IFuncionalidad.cs" />
     <Compile Include="Servicios\INotificationService.cs" />
   </ItemGroup>
   <ItemGroup />
