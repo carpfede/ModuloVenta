@@ -40,7 +40,7 @@ namespace Presentacion.Vistas
 
         private void BtnClose(object sender, EventArgs e)
         {
-            Dispose();
+            Close();
         }
 
         private void BtnIngresar(object sender, EventArgs e)

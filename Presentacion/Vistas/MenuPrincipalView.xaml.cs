@@ -1,7 +1,12 @@
-﻿using Presentacion.Interfaces;
+﻿using Presentacion.Dto;
+using Presentacion.Interfaces;
 using Presentacion.Presentadores;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Presentacion.Vistas
 {
@@ -9,6 +14,7 @@ namespace Presentacion.Vistas
     {
         #region Members
         private MenuPrincipalPresentador _presentador;
+        public ItemMenuDto[] MenuItems { get; private set; }
         #endregion
 
         #region Constructor
@@ -17,13 +23,15 @@ namespace Presentacion.Vistas
             _presentador = presentador;
             _presentador.SetView(this);
             InitializeComponent();
+            DataContext = this;
+            _presentador.AgregarFuncionalidades();
         }
         #endregion
 
         #region IMenuPrincipal
-        public void CargarFuncionalidad(UserControl control)
+        public void CargarFuncionalidades(ItemMenuDto[] funcionalidades)
         {
-            //Funcionalidades.RowDefinitions.Add();
+            MenuItems = funcionalidades;
         }
 
         public void CerrarSesion()
@@ -33,7 +41,7 @@ namespace Presentacion.Vistas
 
         public void Dispose()
         {
-            throw new System.NotImplementedException();
+            Close();
         }
         #endregion
 
@@ -52,6 +60,20 @@ namespace Presentacion.Vistas
         {
 
         }
+
+        private void Item_Click(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var dependencyObject = Mouse.Captured as DependencyObject;
+            while (dependencyObject != null)
+            {
+                if (dependencyObject is ScrollBar) return;
+                dependencyObject = VisualTreeHelper.GetParent(dependencyObject);
+            }
+
+            MenuToggleButton.IsChecked = false;
+        }
         #endregion
+
+
     }
 }

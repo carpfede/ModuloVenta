@@ -102,6 +102,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Converters\RatioConverter.cs" />
+    <Compile Include="Dto\ItemMenuDto.cs" />
+    <Compile Include="Dto\ToastDto.cs" />
+    <Compile Include="Extensiones\NotifyPropertyChangedExtension.cs" />
     <Compile Include="Interfaces\IIniciarSesion.cs" />
     <Compile Include="Interfaces\IMenuPrincipal.cs" />
     <Compile Include="Interfaces\IView.cs" />

@@ -1,4 +1,4 @@
-﻿using Dominio.Dto;
+﻿using Presentacion.Dto;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using ToastNotifications.Core;

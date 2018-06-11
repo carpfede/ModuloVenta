@@ -22,53 +22,75 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Border CornerRadius="10 10 0 0">
-            <Border.Background>
-                <LinearGradientBrush>
-                    <GradientStop Color="{StaticResource ColorMorado}" Offset="0.1"/>
-                    <GradientStop Color="#b9298b" Offset="1.5"/>
-                </LinearGradientBrush>
-            </Border.Background>
-            <DockPanel >
-                <ToggleButton x:Name="MenuToggleButton" Cursor="Hand" Style="{StaticResource MaterialDesignHamburgerToggleButton}" IsChecked="False" Margin="10"/>
-                <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignLeftEdges" StaysOpen="False" Margin="0 0 15 0">
-                    <StackPanel Cursor="Hand">
-                        <Button Content="Ayuda" Click="BtnAyuda_Click"/>
-                        <Button Content="Minimizar" Click="BtnMinimizar_Click"/>
-                        <Separator/>
-                        <Button Content="Cerrar Sesion" Click="BtnCerrarSesion_Click"/>
-                    </StackPanel>
-                </materialDesign:PopupBox>
-                <TextBlock Text="{StaticResource Title}">
-                    <TextBlock.FontSize>
-                        <System:Double>40</System:Double>
-                    </TextBlock.FontSize>
-                    <TextBlock.Foreground>
-                        <Brush>#C3C3C3</Brush>
-                    </TextBlock.Foreground>
-                    <TextBlock.HorizontalAlignment>
-                        <HorizontalAlignment>Center</HorizontalAlignment>
-                    </TextBlock.HorizontalAlignment>
-                    <TextBlock.VerticalAlignment>
-                        <VerticalAlignment>Center</VerticalAlignment>
-                    </TextBlock.VerticalAlignment>
-                </TextBlock>
+    <materialDesign:DrawerHost IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">
+        <materialDesign:DrawerHost.LeftDrawerContent>
+            <DockPanel MinWidth="212">
+                <ToggleButton Style="{StaticResource MaterialDesignHamburgerToggleButton}" 
+                                    DockPanel.Dock="Top"
+                                    HorizontalAlignment="Right" Margin="16"
+                                    IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay}" />
+                <ListBox x:Name="MenuItemsListBox" Margin="0 16 0 16" SelectedIndex="0"                         
+                             ItemsSource="{Binding MenuItems}"
+                             PreviewMouseLeftButtonUp="Item_Click">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate DataType="Presentacion.Dto:ItemMenuDto">
+                            <TextBlock Text="{Binding Nombre}" Margin="32 0 32 0" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </DockPanel>
-        </Border>
-        <Border CornerRadius="0 0 10 10">
-            <Border.Background>
-                <SolidColorBrush Color="#C3C3C3"/>
-            </Border.Background>
-            <Grid.Row>
-                <System:Int32>1</System:Int32>
-            </Grid.Row>
-        </Border>
-
-    </Grid>
-
+        </materialDesign:DrawerHost.LeftDrawerContent>
+        <DockPanel>
+            <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                            Mode="PrimaryMid" DockPanel.Dock="Top">
+                <materialDesign:ColorZone.CornerRadius>
+                    <CornerRadius>10 10 0 0</CornerRadius>
+                </materialDesign:ColorZone.CornerRadius>
+                <materialDesign:ColorZone.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="{StaticResource ColorMorado}" Offset="0.1"/>
+                        <GradientStop Color="#b9298b" Offset="1.5"/>
+                    </LinearGradientBrush>
+                </materialDesign:ColorZone.Background>
+                <DockPanel>
+                    <ToggleButton x:Name="MenuToggleButton" Cursor="Hand" Style="{StaticResource MaterialDesignHamburgerToggleButton}" IsChecked="False" Margin="10"/>
+                    <materialDesign:PopupBox DockPanel.Dock="Right" PlacementMode="BottomAndAlignLeftEdges" StaysOpen="False" Margin="0 0 15 0">
+                        <StackPanel Cursor="Hand">
+                            <Button Content="Ayuda" Click="BtnAyuda_Click"/>
+                            <Button Content="Minimizar" Click="BtnMinimizar_Click"/>
+                            <Separator/>
+                            <Button Content="Cerrar Sesion" Click="BtnCerrarSesion_Click"/>
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                    <TextBlock Text="{StaticResource Title}">
+                        <TextBlock.FontSize>
+                            <System:Double>40</System:Double>
+                        </TextBlock.FontSize>
+                        <TextBlock.Foreground>
+                            <Brush>#C3C3C3</Brush>
+                        </TextBlock.Foreground>
+                        <TextBlock.HorizontalAlignment>
+                            <HorizontalAlignment>Center</HorizontalAlignment>
+                        </TextBlock.HorizontalAlignment>
+                        <TextBlock.VerticalAlignment>
+                            <VerticalAlignment>Center</VerticalAlignment>
+                        </TextBlock.VerticalAlignment>
+                    </TextBlock>
+                </DockPanel>
+            </materialDesign:ColorZone>
+            <Border CornerRadius="0 0 10 10">
+                <Border.Background>
+                    <SolidColorBrush Color="#C3C3C3"/>
+                </Border.Background>
+                <Grid Name="Panel">
+                    <ScrollViewer
+                                  HorizontalScrollBarVisibility="{Binding ElementName=MenuItemsListBox, Path=SelectedItem.HorizontalScrollBarVisibilityRequirement}"
+                                  VerticalScrollBarVisibility="{Binding ElementName=MenuItemsListBox, Path=SelectedItem.VerticalScrollBarVisibilityRequirement}" 
+                                  Padding="{Binding ElementName=MenuItemsListBox, Path=SelectedItem.MarginRequirement}">
+                        <ContentControl Content="{Binding ElementName=MenuItemsListBox, Path=SelectedItem.Content}" />
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </DockPanel>
+    </materialDesign:DrawerHost>
 </Window>

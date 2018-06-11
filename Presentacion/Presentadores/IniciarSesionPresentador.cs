@@ -31,7 +31,7 @@ namespace Presentacion.Presentadores
         {
             var user = _inicioSesion.AutenticarUsuario(_view.Usuario, _view.Contraseña);
 
-            if (user == null)
+            if (user == null || user.Disabled)
             {
                 _notification.Notify("Error de logeo", "El usuario o contraseña no son correctos.", EToastColor.ErrorColor);
                 return;
@@ -43,16 +43,10 @@ namespace Presentacion.Presentadores
             var roles = user.Roles.Select(u => u.Nombre);
 
             customPrincipal.Identity = new UsuarioPersonalizado(user.UserName, roles.ToArray());
-            try
-            {
-                IoCFactory.Instance.CurrentContainer.Resolve<IMenuPrincipal>().Show();
 
-                _view.Dispose();
-            }
-            catch
-            {
-                _notification.Notify("Error de autorización", "No tiene permiso para acceder");
-            }
+            IoCFactory.Instance.CurrentContainer.Resolve<IMenuPrincipal>().Show();
+
+            _view.Dispose();
         }
     }
 }

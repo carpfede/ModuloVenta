@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Windows.Controls;
+﻿using Presentacion.Dto;
 
 namespace Presentacion.Interfaces
 {
     public interface IMenuPrincipal : IView
     {
-        void CargarFuncionalidad(UserControl control);
+        void CargarFuncionalidades(ItemMenuDto[] funcionalidades);
         void CerrarSesion();
     }
 }

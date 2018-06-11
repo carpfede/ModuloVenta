@@ -8,7 +8,8 @@
         Title="Iniciar Sesion" 
         Width="700" Height="350" 
         WindowStyle="None" WindowStartupLocation="CenterScreen"
-        Background="Transparent" AllowsTransparency="True">
+        Background="Transparent" AllowsTransparency="True"
+        KeyUp="KeyEnter">
     <Grid>
         <Border  Background="{StaticResource ColorLeontina}" VerticalAlignment="Top" Height="50" CornerRadius="10 10 0 0">
             <Grid>
@@ -72,7 +73,7 @@
                     </Grid>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Top" Orientation="Vertical" Grid.Column="1" Grid.Row="3">
-                    <Button Width="100" FontSize="15" Click="BtnIngresar" KeyDown="KeyEnter">
+                    <Button Width="100" FontSize="15" Click="BtnIngresar">
                         <Button.Background>
                             <StaticResource ResourceKey="ColorLeontina"/>
                         </Button.Background>

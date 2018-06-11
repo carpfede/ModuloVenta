@@ -1,6 +1,6 @@
 ﻿using Aplicacion.Servicios;
-using Dominio.Dto;
 using Dominio.Enums;
+using Presentacion.Dto;
 using System;
 using System.Windows;
 using ToastNotifications;
