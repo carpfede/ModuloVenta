@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Dto\IniciarCompraDto.cs" />
     <Compile Include="Dto\IniciarVentaDto.cs" />
-    <Compile Include="Dto\ToastDto.cs" />
     <Compile Include="Entidades\Color.cs" />
     <Compile Include="Entidades\Compra.cs" />
     <Compile Include="Entidades\DetalleCompra.cs" />

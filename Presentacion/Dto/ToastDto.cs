@@ -1,6 +1,6 @@
 ﻿using Dominio.Enums;
 
-namespace Dominio.Dto
+namespace Presentacion.Dto
 {
     public class ToastDto
     {
