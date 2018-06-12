@@ -15,10 +15,10 @@ namespace Presentacion.Helpers
                 items.AddRange(
                     new ItemMenuDto[]
                     {
-                        new ItemMenuDto("Usuarios",new UserControl{ }),
-                        new ItemMenuDto("Empleados",new UserControl{ }),
-                        new ItemMenuDto("Notificaciones",new UserControl{ }),
-                        new ItemMenuDto("Mensajería",new UserControl{ }),
+                        new ItemMenuDto("Nuevo Usuario", "Usuarios", new UserControl{ }),
+                        new ItemMenuDto("Nuevo Empleado", "Empleados", new UserControl{ }),
+                        new ItemMenuDto("Nuevo Notificacion", "Notificaciones", new UserControl{ }),
+                        new ItemMenuDto("Nuevo Mensaje", "Mensajería", new UserControl{ }),
                     });
             }
             return items;

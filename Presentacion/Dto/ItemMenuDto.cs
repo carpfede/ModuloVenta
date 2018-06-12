@@ -11,12 +11,14 @@ namespace Presentacion.Dto
     {
         #region Members
         private string _nombre;
+        private string _jerarquia;
         private object _content;
         private ScrollBarVisibility _horizontalScrollBarVisibilityRequirement;
         private ScrollBarVisibility _verticalScrollBarVisibilityRequirement;
         private Thickness _marginRequirement = new Thickness(16);
 
         public new string Nombre { get => _nombre; set { this.MutateVerbose(ref _nombre, value, RaisePropertyChanged()); } }
+        public string Jerarquia { get => _jerarquia; set { this.MutateVerbose(ref _jerarquia, value, RaisePropertyChanged()); } }
         public new object Content { get => _content; set { this.MutateVerbose(ref _content, value, RaisePropertyChanged()); } }
         public ScrollBarVisibility HorizontalScrollBarVisibilityRequirement
         {
@@ -38,9 +40,10 @@ namespace Presentacion.Dto
         #endregion
 
         #region Constructores
-        public ItemMenuDto(string nombre, object content)
+        public ItemMenuDto(string nombre, string jerarquia, object content)
         {
             _nombre = nombre;
+            _jerarquia = jerarquia;
             Content = content;
         }
         #endregion
