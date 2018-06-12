@@ -1,15 +1,23 @@
-﻿using Presentacion.Dto;
+﻿using Aplicacion.CasosDeUso.ABM.Interfaces;
+using Aplicacion.Servicios;
 using Presentacion.Interfaces;
-using Presentacion.Seguridad;
+using System.Linq;
 using System.Security.Permissions;
-using System.Threading;
-using System.Windows.Controls;
+using Transversal.Seguridad;
 
 namespace Presentacion.Presentadores
 {
     public class MenuPrincipalPresentador : IPresenter<IMenuPrincipal>
     {
         private IMenuPrincipal _view;
+        private readonly IRolesABM _roles;
+        private readonly IFuncionalidadService _service;
+
+        public MenuPrincipalPresentador(IFuncionalidadService service, IRolesABM roles)
+        {
+            _service = service;
+            _roles = roles;
+        }
 
         public void SetView(IMenuPrincipal view)
         {
@@ -19,31 +27,11 @@ namespace Presentacion.Presentadores
         [PrincipalPermission(SecurityAction.Demand, Authenticated = true)]
         public void AgregarFuncionalidades()
         {
-            if (Thread.CurrentPrincipal.IsInRole("Vendedor"))
-                FuncionalidadesVendedor();
-            if (Thread.CurrentPrincipal.IsInRole("Repositor"))
-                FuncionalidadesRepositor();
-            if (Thread.CurrentPrincipal.IsInRole("Administrador"))
-                FuncionalidadesAdministrador();
-        }
+            var roles = IdentificacionServicio.User.Roles;
 
-        private void FuncionalidadesAdministrador()
-        {
-            _view.CargarFuncionalidades(
-                new ItemMenuDto[] {
-                    new ItemMenuDto("Usuarios",new UserControl{ }),
-                    new ItemMenuDto("Empleados",new UserControl{ }),
-                    new ItemMenuDto("Notificaciones",new UserControl{ }),
-                    new ItemMenuDto("Mensajería",new UserControl{ })
-                });
-        }
+            var items = _service.Funcionalidades(roles.ToList());
 
-        private void FuncionalidadesRepositor()
-        {
-        }
-
-        private void FuncionalidadesVendedor()
-        {
+            _view.CargarFuncionalidades(items.ToArray());
         }
     }
 }

@@ -1,9 +1,12 @@
-﻿using Aplicacion.CasosDeUso.Clases;
+﻿using Aplicacion.CasosDeUso.ABM.Clases;
+using Aplicacion.CasosDeUso.ABM.Interfaces;
+using Aplicacion.CasosDeUso.Clases;
 using Aplicacion.CasosDeUso.Interfaces;
 using Aplicacion.Servicios;
 using Datos;
 using Dominio.Repositorios;
 using Presentacion.Converters;
+using Presentacion.Helpers;
 using Presentacion.Interfaces;
 using Presentacion.Presentadores;
 using Presentacion.Vistas;
@@ -28,13 +31,24 @@ namespace Presentacion.IoC
         private void ConfigureContainer()
         {
             _container = new UnityContainer();
+            //Presentadores
             _container.RegisterType<IniciarSesionPresentador>();
-            _container.RegisterType<IIniciarSesion, IniciarSesionView>();
             _container.RegisterType<MenuPrincipalPresentador>();
+
+            //Vistas
+            _container.RegisterType<IIniciarSesion, IniciarSesionView>();
             _container.RegisterType<IMenuPrincipal, MenuPrincipalView>();
+
+            //Casos de Uso
             _container.RegisterType<IInicioSesion, InicioSesion>();
-            _container.RegisterType<INotificationService, NotificationService>();
+            _container.RegisterType<IRolesABM, RolesABM>();
+
+            //Data
             _container.RegisterType(typeof(IRepository<>), typeof(Repository<>), new ContainerControlledLifetimeManager());
+
+            //Servicios
+            _container.RegisterType<INotificationService, NotificationService>();
+            _container.RegisterType<IFuncionalidadService, ProveedorFuncionalidades>();
         }
         #endregion
 

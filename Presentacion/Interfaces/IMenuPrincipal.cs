@@ -1,10 +1,10 @@
-﻿using Presentacion.Dto;
+﻿using Aplicacion.Servicios;
 
 namespace Presentacion.Interfaces
 {
     public interface IMenuPrincipal : IView
     {
-        void CargarFuncionalidades(ItemMenuDto[] funcionalidades);
+        void CargarFuncionalidades(MenuItemBase[] funcionalidades);
         void CerrarSesion();
     }
 }

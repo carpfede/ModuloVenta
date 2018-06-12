@@ -105,6 +105,7 @@
     <Compile Include="Dto\ItemMenuDto.cs" />
     <Compile Include="Dto\ToastDto.cs" />
     <Compile Include="Extensiones\NotifyPropertyChangedExtension.cs" />
+    <Compile Include="Helpers\ProveedorFuncionalidades.cs" />
     <Compile Include="Interfaces\IIniciarSesion.cs" />
     <Compile Include="Interfaces\IMenuPrincipal.cs" />
     <Compile Include="Interfaces\IView.cs" />

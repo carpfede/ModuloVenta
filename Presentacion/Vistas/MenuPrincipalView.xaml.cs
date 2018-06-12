@@ -1,8 +1,6 @@
-﻿using Presentacion.Dto;
+﻿using Aplicacion.Servicios;
 using Presentacion.Interfaces;
 using Presentacion.Presentadores;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
@@ -14,7 +12,7 @@ namespace Presentacion.Vistas
     {
         #region Members
         private MenuPrincipalPresentador _presentador;
-        public ItemMenuDto[] MenuItems { get; private set; }
+        public MenuItemBase[] MenuItems { get; private set; }
         #endregion
 
         #region Constructor
@@ -29,7 +27,7 @@ namespace Presentacion.Vistas
         #endregion
 
         #region IMenuPrincipal
-        public void CargarFuncionalidades(ItemMenuDto[] funcionalidades)
+        public void CargarFuncionalidades(MenuItemBase[] funcionalidades)
         {
             MenuItems = funcionalidades;
         }

@@ -1,8 +1,10 @@
 ﻿using Presentacion.IoC;
 using Presentacion.Seguridad;
 using System;
+using System.Security.Principal;
 using System.Windows;
 using Transversal.IoC;
+using Transversal.Seguridad;
 
 namespace Presentacion
 {
@@ -15,7 +17,8 @@ namespace Presentacion
         {
             base.OnStartup(e);
             IoCFactory.Instance.SetContainer(new IoCUnityContainer());
-            AppDomain.CurrentDomain.SetThreadPrincipal(new IdentificacionUsuario());
+            IdentificacionServicio.Instance.SetUserIdentification(new IdentificacionUsuario());
+            AppDomain.CurrentDomain.SetThreadPrincipal((IPrincipal)IdentificacionServicio.Instance.UserIdentification);
             ComposeObjects();
             Current.MainWindow.Show();
         }

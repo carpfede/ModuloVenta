@@ -77,9 +77,10 @@
     <Compile Include="IoC\IContainer.cs" />
     <Compile Include="IoC\IoCFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\IdentificacionServicio.cs" />
+    <Compile Include="Seguridad\IUsuarioPersonalizado.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Seguridad\" />
     <Folder Include="Validaciones\" />
   </ItemGroup>
   <ItemGroup>
