@@ -1,4 +1,5 @@
-﻿using Presentacion.Extensiones;
+﻿using Aplicacion.Servicios;
+using Presentacion.Extensiones;
 using System;
 using System.ComponentModel;
 using System.Windows;
@@ -6,7 +7,7 @@ using System.Windows.Controls;
 
 namespace Presentacion.Dto
 {
-    public class ItemMenuDto : INotifyPropertyChanged
+    public class ItemMenuDto : MenuItemBase, INotifyPropertyChanged
     {
         #region Members
         private string _nombre;
@@ -15,8 +16,8 @@ namespace Presentacion.Dto
         private ScrollBarVisibility _verticalScrollBarVisibilityRequirement;
         private Thickness _marginRequirement = new Thickness(16);
 
-        public string Nombre { get => _nombre; set { this.MutateVerbose(ref _nombre, value, RaisePropertyChanged()); } }
-        public object Content { get => _content; set { this.MutateVerbose(ref _content, value, RaisePropertyChanged()); } }
+        public new string Nombre { get => _nombre; set { this.MutateVerbose(ref _nombre, value, RaisePropertyChanged()); } }
+        public new object Content { get => _content; set { this.MutateVerbose(ref _content, value, RaisePropertyChanged()); } }
         public ScrollBarVisibility HorizontalScrollBarVisibilityRequirement
         {
             get { return _horizontalScrollBarVisibilityRequirement; }
