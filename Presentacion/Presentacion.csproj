@@ -108,6 +108,7 @@
       <DependentUpon>UsuariosIndexControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters\RatioConverter.cs" />
+    <Compile Include="Dto\CategoriaMenuDto.cs" />
     <Compile Include="Dto\ItemMenuDto.cs" />
     <Compile Include="Dto\ToastDto.cs" />
     <Compile Include="Extensiones\NotifyPropertyChangedExtension.cs" />

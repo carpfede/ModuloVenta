@@ -1,6 +1,9 @@
 ﻿using Aplicacion.Servicios;
+using Presentacion.Dto;
 using Presentacion.Interfaces;
 using Presentacion.Presentadores;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
@@ -12,7 +15,7 @@ namespace Presentacion.Vistas
     {
         #region Members
         private MenuPrincipalPresentador _presentador;
-        public MenuItemBase[] MenuItems { get; private set; }
+        public List<CategoriaMenuDto> MenuItems { get; private set; }
         #endregion
 
         #region Constructor
@@ -29,7 +32,15 @@ namespace Presentacion.Vistas
         #region IMenuPrincipal
         public void CargarFuncionalidades(MenuItemBase[] funcionalidades)
         {
-            MenuItems = funcionalidades;
+            var x = funcionalidades.Where(f => f.Jerarquia == "Usuarios").ToList();
+            List<CategoriaMenuDto> categorias = new List<CategoriaMenuDto>()
+            {
+                new CategoriaMenuDto("Usuarios",funcionalidades.Where(f => f.Jerarquia == "Usuarios").ToList()),
+                new CategoriaMenuDto("Empleados",funcionalidades.Where(f => f.Jerarquia == "Empleados").ToList()),
+                new CategoriaMenuDto("Notificaciones",funcionalidades.Where(f => f.Jerarquia == "Notificaciones").ToList()),
+                new CategoriaMenuDto("Mensajería",funcionalidades.Where(f => f.Jerarquia == "Mensajería").ToList())
+            };
+            MenuItems = categorias;
         }
 
         public void CerrarSesion()

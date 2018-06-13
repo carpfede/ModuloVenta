@@ -4,8 +4,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:serv="clr-namespace:Aplicacion.Servicios;assembly=Aplicacion"
     xmlns:tools="clr-namespace:Presentacion.Converters"
+    xmlns:dto="clr-namespace:Presentacion.Dto"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
     x:Class="Presentacion.Vistas.MenuPrincipalView"
     mc:Ignorable="d"
     Title="Menu Principal"
@@ -29,7 +31,23 @@
                                     DockPanel.Dock="Top"
                                     HorizontalAlignment="Right" Margin="16"
                                     IsChecked="{Binding ElementName=MenuToggleButton, Path=IsChecked, Mode=TwoWay}" />
-                <ListBox x:Name="MenuItemsListBox" Margin="0 16 0 16" SelectedIndex="0"                         
+                <Grid Margin="0 16 0 16">
+                    <TreeView
+                      ItemsSource="{Binding MenuItems}"
+                      MinWidth="220">
+                        <TreeView.Resources>
+                            <HierarchicalDataTemplate DataType="{x:Type dto:CategoriaMenuDto}"
+                                              ItemsSource="{Binding Items}">
+                                <TextBlock Text="{Binding Nombre}" Margin="3 2"/>
+                            </HierarchicalDataTemplate>
+                            <DataTemplate DataType="{x:Type serv:MenuItemBase}">
+                                <TextBlock Text="{Binding Nombre}" Margin="3 2"/>
+                            </DataTemplate>
+                        </TreeView.Resources>
+                    </TreeView>
+
+                </Grid>
+                <!--<ListBox x:Name="MenuItemsListBox" Margin="0 16 0 16" SelectedIndex="0"                         
                              ItemsSource="{Binding MenuItems}"
                              PreviewMouseLeftButtonUp="Item_Click">
                     <ListBox.ItemTemplate>
@@ -37,7 +55,7 @@
                             <TextBlock Text="{Binding Nombre}" Margin="32 0 32 0" />
                         </DataTemplate>
                     </ListBox.ItemTemplate>
-                </ListBox>
+                </ListBox>-->
             </DockPanel>
         </materialDesign:DrawerHost.LeftDrawerContent>
         <DockPanel>
