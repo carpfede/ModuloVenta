@@ -20,9 +20,9 @@ namespace Presentacion.Vistas
         {
             _presentador = presentador;
             _presentador.SetView(this);
+            _presentador.AgregarFuncionalidades();
             InitializeComponent();
             DataContext = this;
-            _presentador.AgregarFuncionalidades();
         }
         #endregion
 

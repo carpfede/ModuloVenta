@@ -101,6 +101,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ControlesDeUsuario\Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\UsuariosIndexControl.xaml.cs">
+      <DependentUpon>UsuariosIndexControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converters\RatioConverter.cs" />
     <Compile Include="Dto\ItemMenuDto.cs" />
     <Compile Include="Dto\ToastDto.cs" />
@@ -155,10 +161,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ControlesDeUsuario\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Page Include="ControlesDeUsuario\Home.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ControlesDeUsuario\UsuariosIndexControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Notificaciones\CustomMessage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
