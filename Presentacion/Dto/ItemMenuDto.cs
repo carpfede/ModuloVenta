@@ -17,9 +17,10 @@ namespace Presentacion.Dto
         private ScrollBarVisibility _verticalScrollBarVisibilityRequirement;
         private Thickness _marginRequirement = new Thickness(16);
 
-        public new string Nombre { get => _nombre; set { this.MutateVerbose(ref _nombre, value, RaisePropertyChanged()); } }
-        public string Jerarquia { get => _jerarquia; set { this.MutateVerbose(ref _jerarquia, value, RaisePropertyChanged()); } }
-        public new object Content { get => _content; set { this.MutateVerbose(ref _content, value, RaisePropertyChanged()); } }
+        public override string Nombre { get => _nombre; set { this.MutateVerbose(ref _nombre, value, RaisePropertyChanged()); } }
+        public override string Jerarquia { get => _jerarquia; set { this.MutateVerbose(ref _jerarquia, value, RaisePropertyChanged()); } }
+        public override object Content { get => _content; set { this.MutateVerbose(ref _content, value, RaisePropertyChanged()); } }
+
         public ScrollBarVisibility HorizontalScrollBarVisibilityRequirement
         {
             get { return _horizontalScrollBarVisibilityRequirement; }
@@ -56,5 +57,6 @@ namespace Presentacion.Dto
             return args => PropertyChanged?.Invoke(this, args);
         }
         #endregion
+
     }
 }
